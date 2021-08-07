@@ -1,5 +1,9 @@
 <?php
 
+
+define('TIMEZONE', 'Africa/Nairobi');
+date_default_timezone_set(TIMEZONE);
+
 define("DB_HOST", "localhost");
 define("DB_USER", "mabele");
 define("DB_PASSWORD", "Mabele2020*");

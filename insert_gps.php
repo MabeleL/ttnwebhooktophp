@@ -25,16 +25,7 @@ $uplink_message = $json['uplink_message'];
    $longitude = $uplink_message['decoded_payload']['longitude'];
 
   
-     //LoRaWAN network  information
-$data_rate = $json['data_rate'];
-   $bandwidth = $data_rate['lora']['bandwidth'];
-   $spreading_factor = $data_rate['lora']['spreading_factor'];
-   $coding_rate = $settings['coding_rate'];
-   $frequency = $settings['frequency'];
-
-
-   $sqlCommand = "INSERT INTO gps_data(device_id, application_id,received_at, f_port, f_cnt, latitude,longitude, bandwidth, spreading_factor, coding_rate, frequency) VALUES ('$device_id','$application_id','$received_at', '$f_port','$f_cnt', '$latitude','$longitude', '$bandwidth', '$spreading_factor','$coding_rate','$frequency')";
-
+   $sqlCommand = "INSERT INTO gps_data(device_id, application_id,received_at, f_port, f_cnt, latitude,longitude) VALUES ('$device_id','$application_id','$received_at', '$f_port','$f_cnt', '$latitude','$longitude')";
 
         mysqli_query($conn, $sqlCommand);
 
